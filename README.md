@@ -31,19 +31,26 @@ Scripts are running on Goerli testnet:
 ```
 yarn deposit
 ```
+* Transfer 0.001 ETH from L1 to L2
 
 ### Deploy ArgentAccountNoProxy
 
 ```
 yarn deploy_no_proxy
 ```
+* Deploy two `ArgentAccountNoProxy`
+* Transfer ETH from signer to Account 1
+* Call `execute` on Account 1 to transfer ETH to Account 2
 
 ### Deploy ArgentAccount
 
 ```
 yarn deploy
 ```
-
+* Deploy one implementation of `ArgentAccount`
+* Deploy two `Proxy`
+* Transfer ETH from signer to Account 1
+* Call `execute` on Account 1 to transfer ETH to Account 2
 
 ## TO DO
 
@@ -55,3 +62,10 @@ yarn deploy
 ### Once AA is available
 * Convert the POC using ZKSync AA framework
 * Manage signatures (tx_hash, is_valid_signature, ...)
+* Understand how to get the account address before deploying (CREATE2)
+* Understand how fees are paid for account deployment
+
+## Issues
+
+* Current Proxy pattern doesn't work, because it seems impossible to do a `delegatecall` in the proxy contructor.
+  

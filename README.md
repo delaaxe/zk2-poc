@@ -61,7 +61,11 @@ yarn deploy
 
 ### Once AA is available
 * Convert the POC using ZKSync AA framework
-* Manage signatures (tx_hash, is_valid_signature, ...)
+* Manage signatures:
+  * How signatures will be available
+  * Access to tx_hash ?
+  * Implement is_valid_signature
+  * ...
 * Understand how to get the account address before deploying (CREATE2)
 * Understand how fees are paid for account deployment
 
